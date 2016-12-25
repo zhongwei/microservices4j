@@ -1,0 +1,9 @@
+sample/data/rest/exceptions/AccountNotFoundException.class
+sample/data/rest/SampleDataRestApplication.class
+sample/data/rest/service/HotelRepository.class
+sample/data/rest/service/AccountRepository.class
+sample/data/rest/domain/Hotel.class
+sample/data/rest/service/CityRepository.class
+sample/data/rest/service/CitySearchCriteria.class
+sample/data/rest/domain/Account.class
+sample/data/rest/domain/City.class
