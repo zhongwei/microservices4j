@@ -17,7 +17,7 @@ public class SampleRedisService {
         ValueOperations<String, String> ops = this.template.opsForValue();
         String key = "spring.boot.redis.test";
         if (!this.template.hasKey(key)) {
-            ops.set(key, "Redis is OK!");
+                ops.set(key, "Redis is OK!");
         }
         System.out.println("Found key " + key + ", value=" + ops.get(key));
         return ops.get(key);

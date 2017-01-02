@@ -18,12 +18,11 @@ public class RedisSampleController {
 
     @RequestMapping("home")
     String home() {
-        String returnString = "Hello World!!!!";
+        String returnString = "";
         try {
             returnString = sampleRedisService.redisSample();
         } catch (Exception e) {
             e.printStackTrace();
-            returnString = e.toString();
         }
         return returnString;
     }
