@@ -3,11 +3,14 @@ Microservices for java platform.
 
 ## mvn clean install
 
+## Create microservices4j user-defined network in docker
+- `docker network create --driver bridge microservices4j`
+
 ## Start MySQL
-- `docker run --name account-service-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=account-service -d mysql`
+- `docker run --name account-service-db --network-alias mysql --network microservices4j -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=account-service -d mysql`
 
 ## Start account-service
-- `docker run --name account-service --link account-service-db:mysql -p 8080:8080 -d zhongwei/account-service`
+- `docker run --name account-service --network microservices4j -p 8080:8080 -d zhongwei/account-service`
 
 ## Check it
 - http://localhost:8080/api/accounts
