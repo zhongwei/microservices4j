@@ -13,9 +13,19 @@ services:
                 aliases:
                     - mysql
 
+    redis:
+        image: redis
+        ports:
+            - "6379:6379"
+        networks:
+            microservices4j:
+                aliases:
+                    - redis
+
     account-service:
         depends_on:
             - account-service-db
+            - redis
         restart: always
         image: zhongwei/account-service
         ports:
