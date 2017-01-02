@@ -1,4 +1,5 @@
 version: '2'
+
 services:
     account-service-db:
         image: mysql
@@ -7,10 +8,21 @@ services:
         environment:
             - MYSQL_ROOT_PASSWORD=root
             - MYSQL_DATABASE=account-service
+        networks:
+            microservices4j:
+                aliases:
+                    - mysql
 
     account-service:
+        depends_on:
+            - account-service-db
+        restart: always
         image: zhongwei/account-service
         ports:
             - "8080:8080"
-        links:
-            - account-service-db:mysql
+        networks:
+            microservices4j:
+
+networks:
+    microservices4j:
+        driver: bridge
