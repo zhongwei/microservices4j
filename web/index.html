@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+	<div id="app" style="background-color: #333; border-color: #333;">
+		<div class="card-columns">
+			<template v-for="item in items">
+				<div class="card card-inverse" style="background-color: #333; border-color: #333;">
+				<div class="card-block">
+					<h4 class="card-title">{{ item.title }}</h4>
+					<h6 class="card-subtitle text-muted">Support card subtitle</h6>
+				</div>
+		
+				</div>
+			</template>
+		</div>
+	</div>
+
+	<script src="vendor/jquery.min.js"></script>
+	<script src="vendor/axios.min.js"></script>
+	<script src="vendor/tether.min.js"></script>
+	<script src="vendor/vue.min.js"></script>
+	<script src="vendor/vue-router.min.js"></script>
+	<script src="vendor/vuex.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/allData.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
