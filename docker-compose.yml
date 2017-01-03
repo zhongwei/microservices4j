@@ -22,10 +22,20 @@ services:
                 aliases:
                     - redis
 
+    rabbitmq:
+        image: rabbitmq:management
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        environment:
+            - RABBITMQ_DEFAULT_USER=zhongwei
+            - RABBITMQ_DEFAULT_PASS=zhongwei
+
     account-service:
         depends_on:
             - account-service-db
             - redis
+            - rabbitmq
         restart: always
         image: zhongwei/account-service
         ports:
