@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tiny example</title>
+    </head>
+    <body>
+        <div id="microservicesDiagram"></div>
+        <script src="viz.js"></script>
+        <script src="diagram.dot.js"></script>
+        <script>
+            document.getElementById('microservicesDiagram').innerHTML += Viz(microservicesDiagram);
+        </script>
+    </body>
+</html>
